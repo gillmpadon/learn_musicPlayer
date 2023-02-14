@@ -6,7 +6,7 @@ body{
     background-repeat: no-repeat;
     height:100vh;
     overflow-y: hidden;
-
+    overflow-y: hidden;
 }
 
 .music{
@@ -17,7 +17,7 @@ body{
     height: 505px;
     border: 1px solid white;
     border-radius: 50px;
-    background: rgba(9, 8, 8, 0.3);
+    background: rgba(9, 8, 8, 0.5);
     
 }
 
@@ -29,16 +29,24 @@ body{
     text-shadow: 1px 2px black;
     color: white;
     position: relative;
-    top: -130px;
+    top: 50px;
 }
 #songAuthor{
     position: relative;
-    top: -170px;
+    top: 10px;
     font-size: 20px;
     
 }
 
-
+.quote{
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}
 
 
 
@@ -50,8 +58,11 @@ body{
     margin: auto;
     position: relative;
     top: 20px;
+    border: 1px solid white;
 
 }
+
+
 
 #photoback{
     border: 1px solid white ;
@@ -112,9 +123,63 @@ body{
 .buttons img{
     width: 60px;
     position: relative;
-    top: -250px;
+    top: -90px;
 }
+
+#over{
+    position: relative;
+    top: -10px;
+    left: 20px;
+}
+
+#imgExit{
+    position: relative;
+    top: -310px;
+    width: 60px;
+    left: 550px;
+}
+
 @media only screen and (min-width: 300px) and (max-width: 700px) {
+    body{
+        height: 100vh;
+    }
+    .photo{
+        width: 260px;
+    }
+
+    .quote{
+        width: 250px;
+    }
+    
+    #musicLength{
+        position: relative;
+        left: -330px;
+        top: -40px;
+    }
+    #songName{
+        position: relative;
+        left: 0px;
+    }
+
+    #songAuthor{
+        position: relative;
+
+    }
+
+    #imgExit{
+        position: relative;
+        left: 120px;
+        top: -110px;
+        width: 40px;
+    }
+
+    .buttons img{
+        position: relative;
+        top: -70px;
+        left: -110px;
+        height: 30px;
+        width: 30px;
+    }
     .music{
         position: relative;
         top: 10px;
@@ -122,4 +187,45 @@ body{
         height: 600px;
         text-align: center;
     }
+
+    #photoback{
+        width: 300px;
+        height: 350px;
+        position: relative;
+        left: -155px;
+    }
+
+    .list{
+        position: relative;
+        top: 100px;
+    }
+
+    #songnameList{
+        position: relative;
+        left: -60px;
+    }
+    #authornameList{
+        position: relative;
+        left: -60px;
+    }
+
+    #over{
+        position: relative;
+        top:-15px;
+        left: -100px;
+    }
+
+    .info{
+        position: relative;
+        top: 0px;
+
+    }
+    .info img{
+        position: relative;
+        width: 30px;
+        left: -320px;
+        height: 30px;
+        top: -30px;
+    }
+
 }

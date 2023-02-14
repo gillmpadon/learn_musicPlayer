@@ -13,11 +13,11 @@
         <div class="music">
             <div class="musicContent ">
                 <div class="photoBack">
-                    <img id="pictureback" src="img/musicBack.jpg" alt="">
+                    <img id="pictureback" src="img/valentine1.png" alt="">
                 </div>
                 <div class="photolist">
                     <div class="photo">
-                        <img itemid="picturefront" src="img/musicProf.jpg" id="musicProfPhoto" alt="">
+                        <img itemid="picturefront" src="img/bestImg.jpg" id="musicProfPhoto" alt="">
                     </div>
                     <div class="list">
                         <img src="img/music.png" id="musicVideo"  alt="">
@@ -31,24 +31,24 @@
                     </div>
                     <audio id="myMusic" ></audio>
                     <div class="buttons">
-                        <img src="img/prev.png" id="previmage" alt="prev image">
-                        <img src="img/play.png" id="playimage" alt="play image">
-                        <img src="img/next.png" id="nextimage" alt="next image">
+                        <img src="img/prev.png" class="image" id="previmage" alt="prev image">
+                        <img src="img/play.png" class="image" id="playimage" alt="play image">
+                        <img src="img/next.png" class="image" id="nextimage" alt="next image">
                     </div>
                 </div>
                 
-            </div>
+            </div>  
 
             
         </div>
 
         <script>
-            const title = ["Here With Me","Glimpse Of Us","Traitor"]
-            const author = ["David","Joji","Olivia"]
+            const title = ["Here With Me","Glimpse Of Us","Supermarket Flowers"]
+            const author = ["David","Joji","Ed Sheeran"]
             const songs = ["component/audio0.mp3","component/audio1.mp3","component/audio2.mp3"]
+            const imagesBack = ["img/valentine0.png","img/valentine1.png","img/valentine2.png"]
             const title_page = document.getElementById("songName");
             const author_page = document.getElementById("songAuthor");
-            // const songs = ["components/d4vd - Here With Me.mp3","components/Glimpse of us - Joji.mp3","components/Olivia Rodrigo - traitor.mp3"]
             var music = document.getElementById("myMusic");
             var video = document.getElementById("musicVideo");
             var musicList = document.getElementById("musicList");
@@ -57,9 +57,11 @@
             var next = document.getElementById("nextimage");
             var photoback = document.getElementById("pictureback");
             var photofront = document.getElementById("picturefront");
-            var buttons = document.getElementsByClassName("buttons");
             var currentMusic = 0;
 
+            function changeImage(){
+                photoback.src = imagesBack[currentMusic]
+            }
 
             function changeSongTitle(){
                 title_page.innerHTML = title[currentMusic];
@@ -71,16 +73,17 @@
                     music.src = songs[currentMusic];
                     music.play();
                     play.src = "img/pause.png";
+                    play.style.width = "30px";
                     document.getElementById("musicProfPhoto").style.animation="rotate 200s linear infinite";
                 }else{
                     music.pause();
+                    play.style.width = "40px";
                     play.src = "img/play.png";
-                 
+                    
                 }
-                play.style.width = "30px";
-                play.style.height = "30px";
+            
                 changeSongTitle();
-                
+                changeImage();
             });
 
             prev.addEventListener("click",function(){
@@ -94,6 +97,7 @@
                 music.play();
                 play.src = "img/pause.png";
                 changeSongTitle();
+                changeImage();
             })
 
             next.addEventListener("click",function(){
@@ -107,6 +111,7 @@
                 music.play();
                 play.src = "img/pause.png";
                 changeSongTitle();
+                changeImage();
 
             })
 
