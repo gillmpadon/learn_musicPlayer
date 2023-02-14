@@ -11,17 +11,20 @@
     <div class="music"> 
         <div class="photo">
             <div class="quote">
-                <p>This is a text coming from all the people of the earth combined</p>
+                <audio id="music_clip"></audio>
+                <p id="quoteText">I express my adoration <br> through the gift of time,  
+                    Investing <br> countless hours to make something out of my passing. 
+                    Please know that with your boundless worth, mere objects were unable to fully convey the feelings I had for you.</p>
             </div>
             <div class="songTitle">
-                <h1 id="songName">RED FLAG</h1>
-                <h5 id="songAuthor">SECRET</h5>
+                <h1 id="songName">KARYLLE</h1>
+                <h5 id="songAuthor">GRADE 12 ICT</h5>
             </div>
          
             <div class="buttons">
-                <img src="img/play.png" id="playimage" alt="play image">
+                <img src="img/restart.png" id="playimage" alt="play image">
             </div>
-            <img src="img/exit.png" alt="exit"  id="imgExit">
+            <a href="index.html"><img src="img/exit.png" alt="exit"  id="imgExit"></a>
            
         </div>
         <div class="musicLists">
@@ -32,9 +35,9 @@
                     <p id="authornameList">David</p>
                 </div>
                 <div class="info">
-                    <p id="musicLength">4:02</p>
-                    <img src="img/play.png" alt="play image">
-                    <img src="img/heart.png" alt="heart image">
+                    <p id="musicLength">0:15</p>
+                    <img src="img/play.png" id="audio0" alt="play image">
+                    <img src="img/heart.png" alt="heart image" id="heart0">
                 </div>
             </div>
             <div class="list">
@@ -44,24 +47,93 @@
                     <p id="authornameList">Joji</p>
                 </div>
                 <div class="info">
-                    <p id="musicLength">3:52</p>
-                    <img src="img/play.png" alt="play image">
-                    <img src="img/heart.png" alt="heart image">
+                    <p id="musicLength">0:37</p>
+                    <img src="img/play.png" id="audio1" alt="play image">
+                    <img src="img/heart.png" alt="heart image" id="heart1">
                 </div>
             </div>
             <div class="list">
                 <div class="name">
-                    <h2 id="over">Traitor</h2>
-                    <p id="authornameList">Olivia</p>
+                    <h2 id="over">Supermarket Flowers</h2>
+                    <p id="overauthor">Ed Sheeran</p>
                 </div>
                 <div class="info">
-                    <p id="musicLength">4:49</p>
-                    <img src="img/play.png" alt="play image">
-                    <img src="img/heart.png" alt="heart image">
+                    <p id="musicLength">0:38</p>
+                    <img src="img/play.png" id="audio2" alt="play image">
+                    <img src="img/heart.png" alt="heart image" id="heart2">
                 </div>
             </div>
         </div>
         
     </div>
+
+    <script>
+        var herewithme = "I don't care how long it takes As long as I'm with you I've got a smile on my face"
+        var supermarket = "Oh I'm in pieces, it's tearing me up, but I know A heart that's broke is a heart that's been loved So I'll sing Hallelujah You were an angel in the shape of my mum"
+        var glimpseofus = "Cause sometimes I look in her eyes And that's where I find a glimpse of us And I try to fall for her touch But I'm thinking of the way it was Said I'm fine and said I moved on I'm only here passing time in her arms Hoping I'll find A glimpse of us"
+
+        var audio1_button = document.getElementById("audio0");
+        var audio2_button = document.getElementById("audio1");
+        var audio3_button = document.getElementById("audio2");
+
+        var main_text = document.getElementById("playimage");
+        var text = document.getElementById("quoteText");
+        var music = document.getElementById("music_clip");
+        var h1 = document.getElementById("heart0");
+        var h2 = document.getElementById("heart1");
+        var h3 = document.getElementById("heart2");
+        
+        main_text.addEventListener("click",function(){
+            location.reload()
+        })
+        h1.addEventListener("click",function(){
+            h1.src = "img/redHeart.png";
+          
+        })
+        h2.addEventListener("click",function(){
+            h2.src = "img/redHeart.png";
+           
+        })
+        h3.addEventListener("click",function(){
+            h3.src = "img/redHeart.png";
+           
+        })
+        audio1_button.addEventListener("click",function(){
+            
+            text.innerHTML = herewithme;
+            if(music.paused){
+                music.src = "clip/audio_clip0.mp3";
+                audio1_button.src = "img/pause.png"
+                music.play()
+            }else{
+                audio1_button.src = "img/play.png"
+                music.pause()
+            }
+        })
+       
+        audio2_button.addEventListener("click",function(){
+            text.innerHTML = glimpseofus
+            if(music.paused){
+                music.src = "clip/audio_clip1.mp3";
+                audio2_button.src = "img/pause.png"
+                music.play()
+            }else{
+                audio2_button.src = "img/play.png"
+                music.pause()
+            }
+        })
+        audio3_button.addEventListener("click",function(){
+            text.innerHTML =supermarket     
+            if(music.paused){
+                music.src = "clip/audio_clip2.mp3";
+                audio3_button.src = "img/pause.png"
+                music.play()
+            }else{
+                audio3_button.src = "img/play.png"
+                music.pause()
+            }
+            
+        })
+    </script>
 </body>
 </html>

@@ -57,7 +57,7 @@ body{
     position: relative;
     left: 120px;
     top: 120px;
-    animation: rotate 10s linear infinite;
+    animation: rotate 360s linear infinite;
 }
 .list{
     width: 60px;
