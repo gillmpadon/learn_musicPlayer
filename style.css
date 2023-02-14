@@ -112,6 +112,10 @@ body{
         text-align: center;
     }
 
+    #songName{
+        font-size: 25px;
+    }
+
     .photoBack img{
         position: relative;
         top: -12px;
@@ -157,6 +161,7 @@ body{
         left: 10px;
         top: -90px;
     }
+   
 }
  
 

@@ -42,12 +42,12 @@ body{
     color: white;
     border-radius: 20px;
     height: 100px;
-    width: 300px;
+    width: 500px;
     text-align: center;
     margin: auto;
     position: relative;
     top: -20px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 
@@ -149,14 +149,18 @@ body{
 @media only screen and (min-width: 300px) and (max-width: 700px) {
     body{
         height: 100vh;
+        width: 100vw;
+        overflow: hidden;
     }
     .photo{
         width: 260px;
+        height: 300px;
     }
 
     .quote{
-        width: 250px;
-        font-size: 15px;
+        width: 260px;
+        height: 200px;
+        font-size: 20px;
     }
     
     #musicLength{
@@ -167,23 +171,24 @@ body{
     #songName{
         position: relative;
         left: 0px;
+        top: 10px;
     }
 
     #songAuthor{
         position: relative;
-
+        top: -30px;
     }
 
     #imgExit{
         position: relative;
         left: 120px;
-        top: -130px;
+        top: -150px;
         width: 40px;
     }
 
     #playimage{
         position: relative;
-        top: -85px;
+        top: -110px;
         width: 40px;
         height: 40px;
     }
@@ -212,7 +217,7 @@ body{
 
     .list{
         position: relative;
-        top: 100px;
+        top: 10px;
     }
 
     #songnameList{
