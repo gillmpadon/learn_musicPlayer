@@ -6,37 +6,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
   
         <div class="music">
-            <div class="musicContent">
+            <div class="musicContent ">
                 <div class="photoBack">
-                    <img src="img/musicBack.jpg" alt="">
+                    <img id="pictureback" src="img/musicBack.jpg" alt="">
                 </div>
                 <div class="photolist">
                     <div class="photo">
-                        <img src="img/musicProf.jpg" alt="">
+                        <img itemid="picturefront" src="img/musicProf.jpg" id="musicProfPhoto" alt="">
                     </div>
                     <div class="list">
-                        <img src="img/music.png" alt="">
-                        <img src="img/list.png" alt="">
+                        <img src="img/music.png" id="musicVideo"  alt="">
+                        <img src="img/list.png" id="musicList" alt="">
                     </div>
                 </div>
                 <div class="component">
                     <div class="songTitle">
-                        <h1 id="songName">RED FLAG</h1>
-                        <h5 id="songAuthor">SECRET</h5>
+                        <h1 id="songName">Karylle Kristal</h1>
+                        <h5 id="songAuthor">ICT 12</h5>
                     </div>
+                    <audio id="myMusic" ></audio>
                     <div class="buttons">
-                        <img src="img/prev.png" alt="prev image">
-                        <img src="img/play.png" alt="play image">
-                        <img src="img/next.png" alt="next image">
+                        <img src="img/prev.png" id="previmage" alt="prev image">
+                        <img src="img/play.png" id="playimage" alt="play image">
+                        <img src="img/next.png" id="nextimage" alt="next image">
                     </div>
                 </div>
                 
             </div>
+
+            
         </div>
+
+        <script>
+            const title = ["Here With Me","Glimpse Of Us","Traitor"]
+            const author = ["David","Joji","Olivia"]
+            const songs = ["component/audio0.mp3","component/audio1.mp3","component/audio2.mp3"]
+            const title_page = document.getElementById("songName");
+            const author_page = document.getElementById("songAuthor");
+            // const songs = ["components/d4vd - Here With Me.mp3","components/Glimpse of us - Joji.mp3","components/Olivia Rodrigo - traitor.mp3"]
+            var music = document.getElementById("myMusic");
+            var video = document.getElementById("musicVideo");
+            var musicList = document.getElementById("musicList");
+            var prev = document.getElementById("previmage");
+            var play = document.getElementById("playimage");
+            var next = document.getElementById("nextimage");
+            var photoback = document.getElementById("pictureback");
+            var photofront = document.getElementById("picturefront");
+            var buttons = document.getElementsByClassName("buttons");
+            var currentMusic = 0;
+
+
+            function changeSongTitle(){
+                title_page.innerHTML = title[currentMusic];
+                author_page.innerHTML= author[currentMusic];
+            }
+       
+            play.addEventListener("click", function() {
+                if(music.paused){
+                    music.src = songs[currentMusic];
+                    music.play();
+                    play.src = "img/pause.png";
+                    document.getElementById("musicProfPhoto").style.animation="rotate 200s linear infinite";
+                }else{
+                    music.pause();
+                    play.src = "img/play.png";
+                 
+                }
+                play.style.width = "30px";
+                play.style.height = "30px";
+                changeSongTitle();
+                
+            });
+
+            prev.addEventListener("click",function(){
+                if(currentMusic===0){
+                    currentMusic = songs.length -1;
+                }else{
+                    currentMusic --;
+                }
+                document.getElementById("musicProfPhoto").style.animation="rotate 200s linear infinite";
+                music.src = songs[currentMusic];
+                music.play();
+                play.src = "img/pause.png";
+                changeSongTitle();
+            })
+
+            next.addEventListener("click",function(){
+                if(currentMusic== songs.length-1){
+                    currentMusic = 0;
+                }else{
+                    currentMusic++;
+                }
+                document.getElementById("musicProfPhoto").style.animation="rotate 200s linear infinite";
+                music.src = songs[currentMusic];
+                music.play();
+                play.src = "img/pause.png";
+                changeSongTitle();
+
+            })
+
+         
+        </script>
 
 </body>
 </html>

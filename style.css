@@ -13,7 +13,7 @@ body{
 .music{
     margin: auto;
     position: relative;
-    top: 200px;
+    top: 50px;
     width: 731px;
     height: 505px;
     border: 1px solid white;
@@ -54,6 +54,10 @@ body{
     border-radius: 250px;
     border: 3px solid #1E1E1E;
     object-fit: cover;
+    position: relative;
+    left: 120px;
+    top: 120px;
+    animation: rotate 10s linear infinite;
 }
 .list{
     width: 60px;
@@ -99,3 +103,69 @@ body{
  }
 
 
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+    .music{
+        position: relative;
+        top: 10px;
+        width: 350px;
+        height: 600px;
+        text-align: center;
+    }
+
+    .photoBack img{
+        position: relative;
+        top: -12px;
+        width: 330px;
+        height: 570px;
+        border-radius: 50px;
+        object-fit: cover;
+        
+    }
+
+    .songTitle{
+        text-align: center;
+        position: relative;
+        top: -110px;
+    }
+    .photo img{
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        position: relative;
+        top: -10px;
+        left: 150px;
+        animation: rotate 3600s linear infinite;
+    }
+
+    .buttons img{
+        position: relative;
+        top: -20px;
+        width: 30px;
+        padding: 20px;
+
+    }
+
+    .list{
+        width: 150px;
+        position: relative;
+        top: 270px;
+        left: -120px;
+    }
+
+    .list img{
+        position: relative;
+        left: 10px;
+        top: -90px;
+    }
+}
+ 
+
+/* make the background img  rotate */
+@keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
